@@ -1,8 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
+import Search from './Search.jsx'
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      textInput: '',
+      songArray: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.search = this.search.bind(this);
+  }
+
+  search (term){
+    // console.log(term)
+    this.setState({
+      songArray: this.state.songArray
+    })
+  }
+
+  handleChange(event){
+    this.setState({
+      textInput: event.target.value
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -13,6 +36,7 @@ class App extends Component {
         <p className="App-intro">
           Suggest an evil word
         </p>
+        <Search onSearch={this.search.bind(this)}/>
       </div>
     );
   }
