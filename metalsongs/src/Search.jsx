@@ -6,7 +6,7 @@ class Search extends React.Component{
     this.state = {
       textInput: ''
     }
-    this.search = this.search.bind(this);
+  this.search = this.search.bind(this);
   this.onChange = this.onChange.bind(this);   
   this.handleChange = this.handleChange.bind(this); 
 }
@@ -18,10 +18,14 @@ onChange (e){
 }
 
 search(){
+  console.log('SEARCH - EACH SEARCH CLICK', this.state.textInput)
+//   `http://em.wemakesites.net/search/song_title/{this.state.textInput}?api_key=0b397ce4-1961-401b-92dd-a1226c118f17`
   this.props.onSearch(this.state.textInput);
 }
 
+
 handleChange(event){
+//   console.log('HANDLE CHANGE - EACH KEYPRESS', this.state.textInput)
   this.setState({
     textInput: event.target.value
   });

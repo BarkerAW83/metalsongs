@@ -15,7 +15,6 @@ class App extends Component {
   }
 
   search (term){
-    // console.log(term)
     this.setState({
       songArray: this.state.songArray
     })
