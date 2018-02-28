@@ -6,6 +6,7 @@ class Search extends React.Component{
     this.state = {
       textInput: ''
     }
+    this.search = this.search.bind(this);
   this.onChange = this.onChange.bind(this);   
   this.handleChange = this.handleChange.bind(this); 
 }
